@@ -26,7 +26,7 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
           repository: wattmto/oss-fuzz
-          ref: 'master'
+          ref: 'upstream'
       - name: Add Upstream
         if: steps.cache-repo.outputs.cache-hit != 'true'
         run: |
@@ -35,6 +35,6 @@ jobs:
         run: |
           git pull
           git fetch upstream master
-          git checkout master
+          git checkout upstream
           git merge --no-commit --ff-only upstream/master
-          git push origin master
+          git push origin upstream
