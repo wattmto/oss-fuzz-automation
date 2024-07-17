@@ -36,5 +36,5 @@ jobs:
           git pull
           git fetch upstream master
           git checkout master
-          git merge --no-edit upstream/master
+          git merge --no-commit --ff-only upstream/master
           git push origin master
